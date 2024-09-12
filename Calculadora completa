@@ -5,6 +5,13 @@
 
 int main()
 {
+    int num;
+    printf("Escolha a matéria: \n");
+    printf("1. Matemática\n");
+    printf("2. Física\n");
+    scanf("%d", &num);
+    
+    if (num==1){
     int numer;
 printf("Escolha a operação:\n");
 
@@ -17,7 +24,7 @@ printf("6. Lei dos cossenos\n");
 printf("7. Lei dos senos\n");
 printf("8. Divisores\n");
 printf("9. Fatorial\n");
-printf("10. \n");
+printf("10. Derivada\n");
 printf("Digite o numero da operação escolhida:");
 scanf("%i", &numer);
 if (numer== 1){ 
@@ -59,7 +66,7 @@ else if (numer== 4){
 
 else if(numer ==5)
 {
-    float a,b,c,b1,delta,r1,r2,divi,minhabenga,b2,mult1,mult2,raiz;
+    float a,b,c,b1,delta,r1,r2,divi,mb,b2,mult1,mult2,raiz;
     printf("Digite a: ");
     scanf("%f", &a);
     printf("Digite b: ");
@@ -69,9 +76,9 @@ else if(numer ==5)
     divi= 2*a;
     b1= -1*b;
     b2= b*b;
-    minhabenga=4*a*c;
-    delta= b2-minhabenga;
-    if(delta <= 0 ||a==0||b==0)
+    mb=4*a*c;
+    delta= b2-mb;
+    if(delta <= 0 ||a==0)
     { 
         printf("Não é possivel calcular!!!");
     }
@@ -144,7 +151,7 @@ else if (numer == 7)
         printf("ERROR");
     }
 } 
-    else if ( numer==8){
+else if ( numer==8){
         int d;
         int x=1;
         printf("Digite um numero: ");
@@ -156,8 +163,101 @@ else if (numer == 7)
        x++;
     }
     }
+
+    
+else if(numer==9){
+        int fator;
+        int result=1;
+        printf("Digite o número para transformar em fatorial: ");
+        scanf("%i", &fator);
+        if(fator<1){
+            printf("Fatorial não definido");
+        }
+        else {
+            while (fator>1) 
+        {   
+            result*=fator;
+            fator--;
+        }
+            printf("O fatorial é: %d", result);
+        }
+    }
+else if(numer == 10){
+    
+}
 else{
         printf("ERROR");
     }
+    }
+    else if (num==2){
+        int numer;
+        printf("1.Movimento uniforme\n");
+        printf("2.\n");
+        printf("3.\n");
+        printf("4.\n");
+        printf("5.\n");
+        printf("6.\n");
+        printf("7.\n");
+        scanf("%i", &numer);
+        
+        if (numer==1){
+            int n;
+            printf("\nEscolha: \n");
+            printf("1. Tempo\n");
+            printf("2. Velocidade\n");
+            printf("3. Espaço Final\n");
+            printf("4. Espaço Inicial\n");
+            printf("5. Instante de encontro\n");
+            scanf("%d", &n);
+            if (n==1){
+                float so, s, v, delt, res;
+                printf("\nDigite o espaço inicial: ");
+                scanf("%f", &so);
+                printf("\nDigite o espaco final: ");
+                scanf("%f", &s);
+                printf("\nDigite a velocidade: ");
+                scanf("%f", &v);
+                delt= s -so;
+                res= delt/v;
+                printf("A velocidade é: %.2f (as unidades são a mesma que você colocou)", res);
+            }
+            else if(n==2){
+                
+            }
+            else if(n==3){
+                
+            }
+            else if(n==4){
+                
+            }
+            else if(n==5){
+                
+            }
+            else{
+                printf("ERROR");
+            }
+        }
+        else if(numer==2){
+            
+        }
+        else if(numer==3){
+            
+        }
+        else if(numer==4){
+            
+        }
+        else if(numer==5){
+            
+        }
+        else if(numer==6){
+            
+        }
+        else if(numer==7){
+            
+        }
+    }
+    else {
+        printf("ERROR");
+        }
 return 0;
 }
