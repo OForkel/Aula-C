@@ -24,7 +24,7 @@ printf("6. Lei dos cossenos\n");
 printf("7. Lei dos senos\n");
 printf("8. Divisores\n");
 printf("9. Fatorial\n");
-printf("10. Derivada\n");
+printf("10. \n");
 printf("Digite o numero da operação escolhida:");
 scanf("%i", &numer);
 if (numer== 1){ 
@@ -191,15 +191,14 @@ else{
     }
     else if (num==2){
         int numer;
-        printf("1.Movimento uniforme\n");
-        printf("2.\n");
+        printf("1. Movimento uniforme\n");
+        printf("2. Movimento Variado\n");
         printf("3.\n");
         printf("4.\n");
         printf("5.\n");
         printf("6.\n");
         printf("7.\n");
         scanf("%i", &numer);
-        
         if (numer==1){
             int n;
             printf("\nEscolha: \n");
@@ -207,7 +206,6 @@ else{
             printf("2. Velocidade\n");
             printf("3. Espaço Final\n");
             printf("4. Espaço Inicial\n");
-            printf("5. Instante de encontro\n");
             scanf("%d", &n);
             if (n==1){
                 float so, s, v, delt, res;
@@ -219,19 +217,43 @@ else{
                 scanf("%f", &v);
                 delt= s -so;
                 res= delt/v;
-                printf("A velocidade é: %.2f (as unidades são a mesma que você colocou)", res);
+                printf("O tempo é: %.2f", res);
             }
             else if(n==2){
-                
+                float so,s,v,delt,res,t;
+                printf("\nDigite o espaço inicial: ");
+                scanf("%f", &so);
+                printf("\nDigite o espaço final: ");
+                scanf("%f", &s);
+                printf("\nDigite o tempo: ");
+                scanf("%f", &t);
+                delt=s-so;
+                v=delt/t;
+                printf("A velocidade é: %.2f", v);
             }
             else if(n==3){
-                
+                float so,s,v,delt,res,t;
+                printf("\nDigite o espaço inicial: ");
+                scanf("%f", &so);
+                printf("\nDigite o tempo: ");
+                scanf("%f", &t);
+                printf("\nDigite a velocidade : ");
+                scanf("%f", &v);
+                delt=v*t;
+                s=so+delt;
+                printf("O espaço final é: %.2f", s);
             }
             else if(n==4){
-                
-            }
-            else if(n==5){
-                
+                float so,s,v,delt,res,t;
+                printf("\nDigite o espaço final: ");
+                scanf("%f", &s);
+                printf("\nDigite o tempo: ");
+                scanf("%f", &t);
+                printf("\nDigite a velocidade: ");
+                scanf("%f", &v);
+                delt=v*t;
+                so=s-delt;
+                printf("O espaço inicial é: %.2f", so);
             }
             else{
                 printf("ERROR");
