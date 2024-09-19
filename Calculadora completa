@@ -24,7 +24,7 @@ printf("6. Lei dos cossenos\n");
 printf("7. Lei dos senos\n");
 printf("8. Divisores\n");
 printf("9. Fatorial\n");
-printf("10. \n");
+printf("10.Ângulos de um triângulo\n");
 printf("Digite o numero da operação escolhida:");
 scanf("%i", &numer);
 if (numer== 1){ 
@@ -63,7 +63,6 @@ else if (numer== 4){
     div1=num7/num8;
     printf("O resultado é %f", div1);
 }
-
 else if(numer ==5)
 {
     float a,b,c,b1,delta,r1,r2,divi,mb,b2,mult1,mult2,raiz;
@@ -183,7 +182,39 @@ else if(numer==9){
         }
     }
 else if(numer == 10){
-    
+    float l1,l2,l3,a1,a2,a3,au,bu,cu,po,aa1,aa2,aa3,aaa1,aaa2,aaa3,m1,m2,m3;
+    printf("Digite o primeiro lado do triângulo: ");
+    scanf("%f", &l1);
+    printf("Digite o segundo lado do triângulo: ");
+    scanf("%f", &l2);
+    printf("Digite o terceiro lado do triângulo: ");
+    scanf("%f", &l3);
+    if(l1==l2 && l2==l3){
+        printf("O triângulo é equilátero com os ângulos medindo: ");
+    }
+    else if (l1!=l2 && l1!=l3 && l2!=l3){
+        printf("O triângulo é escaleno com os ângulos medindo: ");
+    }
+    else{
+        printf("O triângulo é isósceles com os ângulos medindo: ");
+    }
+    au= l1*l1;
+    bu= l2*l2;
+    cu= l3*l3;
+    po= au+bu+cu;
+    m1= -2*l1*l2;
+    m2= -2*l2*l3;
+    m3= -2*l1*l3;
+    aa1= po/m3;
+    aa2= po/m2;
+    aa3= po/m3;
+    aaa1= acos(aa1);
+    aaa2= acos(aa2);
+    aaa3= acos(aa3);
+    a1=aaa1*180/M_PI;
+    a2=aaa2*180/M_PI;
+    a3=aaa3*180/M_PI;
+    printf("A= %.2f; B= %.2f; C= %.2f;", a1,a2,a3);
 }
 else{
         printf("ERROR");
