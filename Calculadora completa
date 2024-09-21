@@ -63,8 +63,7 @@ else if (numer== 4){
     div1=num7/num8;
     printf("O resultado é %f", div1);
 }
-else if(numer ==5)
-{
+else if(numer ==5){
     float a,b,c,b1,delta,r1,r2,divi,mb,b2,mult1,mult2,raiz;
     printf("Digite a: ");
     scanf("%f", &a);
@@ -92,8 +91,7 @@ else if(numer ==5)
     }
     
 }
-else if (numer == 6)
-{
+else if (numer == 6){
     float num1,num2,quad1,quad2,lucas,coss,res,abla,ang,as;
     printf("Digite o primeiro lado:");
     scanf("%f", &num1);
@@ -108,8 +106,7 @@ else if (numer == 6)
     res= sqrt(quad1+quad2-lucas);
     printf("O resultado é:%f u.m", res);
 }
-else if (numer == 7)
-{
+else if (numer == 7){
     int i;
     printf("1.Descobrir o angulo\n");
     printf("2.Descobrir o lado\n");
@@ -162,8 +159,6 @@ else if ( numer==8){
        x++;
     }
     }
-
-    
 else if(numer==9){
         int fator;
         int result=1;
@@ -182,39 +177,34 @@ else if(numer==9){
         }
     }
 else if(numer == 10){
-    float l1,l2,l3,a1,a2,a3,au,bu,cu,po,aa1,aa2,aa3,aaa1,aaa2,aaa3,m1,m2,m3;
+    float l1, l2, l3, a1, a2, a3, au, bu, cu, po, pi, pu, m1, m2, m3, aa1, aa2, aa3;
     printf("Digite o primeiro lado do triângulo: ");
     scanf("%f", &l1);
     printf("Digite o segundo lado do triângulo: ");
     scanf("%f", &l2);
     printf("Digite o terceiro lado do triângulo: ");
     scanf("%f", &l3);
-    if(l1==l2 && l2==l3){
-        printf("O triângulo é equilátero com os ângulos medindo: ");
+    if (l1 <= 0 || l2 <= 0 || l3 <= 0) {
+        printf("Os lados do triângulo devem ser positivos.\n");
     }
-    else if (l1!=l2 && l1!=l3 && l2!=l3){
-        printf("O triângulo é escaleno com os ângulos medindo: ");
+    if (l1 == l2 && l2 == l3) {
+        printf("O triângulo é equilátero.\n");
+    } else if (l1 != l2 && l1 != l3 && l2 != l3) {
+        printf("O triângulo é escaleno.\n");
+    } else {
+        printf("O triângulo é isósceles.\n");
     }
-    else{
-        printf("O triângulo é isósceles com os ângulos medindo: ");
-    }
-    au= l1*l1;
-    bu= l2*l2;
-    cu= l3*l3;
-    po= au+bu+cu;
-    m1= -2*l1*l2;
-    m2= -2*l2*l3;
-    m3= -2*l1*l3;
-    aa1= po/m3;
-    aa2= po/m2;
-    aa3= po/m3;
-    aaa1= acos(aa1);
-    aaa2= acos(aa2);
-    aaa3= acos(aa3);
-    a1=aaa1*180/M_PI;
-    a2=aaa2*180/M_PI;
-    a3=aaa3*180/M_PI;
-    printf("A= %.2f; B= %.2f; C= %.2f;", a1,a2,a3);
+    au = l1 * l1;
+    bu = l2 * l2;
+    cu = l3 * l3;
+    a1 = acos((bu + cu - au) / (2 * l2 * l3));
+    a2 = acos((au + cu - bu) / (2 * l1 * l3));
+    a3 = acos((au + bu - cu) / (2 * l1 * l2));
+    a1 = a1 * 180 / M_PI;
+    a2 = a2 * 180 / M_PI;
+    a3 = a3 * 180 / M_PI;
+    printf("Os ângulos medem: A= %.2f°; B= %.2f°; C= %.2f°;\n", a1, a2, a3);
+    return 0;
 }
 else{
         printf("ERROR");
@@ -291,8 +281,99 @@ else{
             }
         }
         else if(numer==2){
-            
-        }
+            int n;
+            printf("\nEscolha: \n");
+            printf("1. Não possui a informação de tempo\n");
+            printf("2. Não possui a informação de velocidade final\n");
+            printf("3. Não possui a informação de espaço\n");
+            scanf("%d", &n);
+            if(n==1){
+                int p;
+                printf("\nEscolha: \n");
+                printf("1. Velocidade\n");
+                printf("2. Velocidade inicial\n");
+                printf("3. Aceleração\n");
+                printf("4. Variação do espaço\n");
+                scanf("%d", &p);
+                if(p==1){
+                    
+                }
+                if(p==2){
+                    
+                }
+                if(p==3){
+                    
+                }
+                if(p==4){
+                    
+                }
+                else{
+                    printf("ERROR");
+                }
+            }
+            else if(n==2){
+                int p;
+                printf("\nEscolha: \n");
+                printf("1. Tempo\n");
+                printf("2. Variação do espaço\n");
+                printf("3. Aceleração\n");
+                printf("4. Velocidade inicial");
+                scanf("%d", &p);
+                if(p==1){
+                    
+                }
+                if(p==2){
+                    
+                }
+                if(p==3){
+                    
+                }
+                if(n==3){
+                int p;
+                printf("\nEscolha: \n");
+                printf("1. Velocidade final\n");
+                printf("2. Tempo\n");
+                printf("3. Aceleração\n");
+                printf("4. Velocidade inicial");
+                scanf("%d", &p);
+                if(p==1){
+                    float v,t,a,vo;
+                    printf("\nDigite a Velocidade inicial:");
+                    scanf("%f", &vo);
+                    printf("\nDigite o tempo:");
+                    scanf("%f", &t);
+                    printf("\nDigite a aceleração:");
+                    scanf("%f", &a);
+                    v=vo+(t*a);
+                    printf("A velocidade é: %f", v);
+                }
+                if(p==2){
+                    float v,t,a,vo;
+                    printf("Digite a ");
+                    scanf("%f", &v);
+                    printf("Digite a ");
+                    scanf("%f", &vo);
+                    printf("Digite a ");
+                    scanf("%f", &a);
+                }
+                if(p==3){
+                    float v,t,a,vo;
+                    printf("Digite a ");
+                    scanf("%f", &v);
+                    printf("Digite a ");
+                    scanf("%f", &vo);
+                    printf("Digite a ");
+                    scanf("%f", &t);
+                }
+            }
+            }
+            else if(n==3){
+                
+            }
+            else{
+                printf("ERROR");
+            }
+            }
         else if(numer==3){
             
         }
@@ -307,6 +388,9 @@ else{
         }
         else if(numer==7){
             
+        }
+        else{
+            printf("ERROR");
         }
     }
     else {
