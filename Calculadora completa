@@ -213,7 +213,7 @@ else{
     else if (num==2){
         int numer;
         printf("1. Movimento uniforme\n");
-        printf("2. Movimento Variado\n");
+        printf("2. Movimento Uniformemente Variado\n");
         printf("3.\n");
         printf("4.\n");
         printf("5.\n");
@@ -290,22 +290,54 @@ else{
             if(n==1){
                 int p;
                 printf("\nEscolha: \n");
-                printf("1. Velocidade\n");
+                printf("1. Velocidade final\n");
                 printf("2. Velocidade inicial\n");
                 printf("3. Aceleração\n");
                 printf("4. Variação do espaço\n");
                 scanf("%d", &p);
                 if(p==1){
-                    
+                    float v,vo,a,s;
+                    printf("\nDigite a velocidade inicial: ");
+                    scanf("%f", &vo);
+                    printf("\nDigite a aceleração: ");
+                    scanf("%f", &a);
+                    printf("\nDigite variação de espaço: ");
+                    scanf("%f", &s);
+                    v=sqrt(pow(vo,2)+(2*a*s));
+                    printf("A velocidade final é: %.2f", v);
                 }
-                if(p==2){
-                    
+                else if(p==2){
+                    float v,vo,s,a;
+                    printf("\nDigite a velocidade final: ");
+                    scanf("%f", &v);
+                    printf("\nDigite a aceleração: ");
+                    scanf("%f", &a);
+                    printf("\nDigite a variação do espaço: ");
+                    scanf("%f", &s);
+                    vo=sqrt(pow(v,2)-(2*a*s));
+                    printf("A velocidade inicial é: %.2f", vo);
                 }
-                if(p==3){
-                    
+                else if(p==3){
+                    float v,vo,a,s;
+                    printf("\nDigite a velocidade final: ");
+                    scanf("%f", &v);
+                    printf("\nDigite a velocidade inicial: ");
+                    scanf("%f", &vo);
+                    printf("\nDigite a variação do espaço: ");
+                    scanf("%f", &s);
+                    a=(pow(v,2)-pow(vo,2))/(2*s);
+                    printf("A aceleração é: %.2f", a);
                 }
-                if(p==4){
-                    
+                else if(p==4){
+                    float v,vo,a,s;
+                    printf("\nDigite a velocidade final: ");
+                    scanf("%f", &v);
+                    printf("\nDigite a velocidade inicial: ");
+                    scanf("%f", &vo);
+                    printf("\nDigite a aceleração: ");
+                    scanf("%f", &a);
+                    s=(pow(v,2)-pow(vo,2))/(2*a);
+                    printf("A variação do espaço é: %.2f", s);
                 }
                 else{
                     printf("ERROR");
@@ -317,18 +349,38 @@ else{
                 printf("1. Tempo\n");
                 printf("2. Variação do espaço\n");
                 printf("3. Aceleração\n");
-                printf("4. Velocidade inicial");
+                printf("4. Velocidade inicial\n");
                 scanf("%d", &p);
                 if(p==1){
+                    float t1,t2,disc,s0,s,v0,a;
+                    printf("\nDigite a velocidade inicial: ");
+                    scanf("%f", &v0);
+                    printf("\nDigite a aceleração: ");
+                    scanf("%f", &a);
+                    printf("\nDigite o espaço inicial: ");
+                    scanf("%f", &s0);
+                    printf("\nDigite o espaço final: ");
+                    scanf("%f", &s);
+                    disc=v0 * v0 - 2 * a * (s0 - s);
+                    t1 = (-v0 + sqrt(disc)) / a;
+                    t2 = (-v0 - sqrt(disc)) / a;
+                    if( t1<0 ){
+                        printf("O tempo é: %.2f", t2);
+                    }
+                    else if( t2<0 ){
+                        printf("O tempo é: %.2f", t1);
+                    }
+                    else{
+                        printf("Os tempos são: %.2f e %.2f", t1, t2);
+                    }
+                }
+                else if(p==2){
                     
                 }
-                if(p==2){
+                else if(p==3){
                     
                 }
-                if(p==3){
-                    
-                }
-                if(n==3){
+                else if(n==4){
                 int p;
                 printf("\nEscolha: \n");
                 printf("1. Velocidade final\n");
@@ -366,9 +418,65 @@ else{
                     scanf("%f", &t);
                 }
             }
+                else{
+                    printf("ERROR");
+                } 
             }
             else if(n==3){
-                
+                int p;
+                printf("\nEscolha: \n");
+                printf("1. Velocidade final\n");
+                printf("2. Velocidade inicial\n");
+                printf("3. Aceleração\n");
+                printf("4. Variação de tempo\n");
+                scanf("%d", &p);
+                if(p==1){
+                    float v,vo,a,t;
+                    printf("\nDigite a velocidade inicial: ");
+                    scanf("%f", &vo);
+                    printf("\nDigite a aceleração: ");
+                    scanf("%f", &a);
+                    printf("\nDigite o tempo: ");
+                    scanf("%f", &t);
+                    v=vo+(a*t);
+                    printf("A velocidade final é: %.2f", v);
+                }
+                else if(p==2){
+                    float v,vo,a,t;
+                    printf("\nDigite a velocidade final: ");
+                    scanf("%f", &v);
+                    printf("\nDigite a aceleração: ");
+                    scanf("%f", &a);
+                    printf("\nDigite o tempo: ");
+                    scanf("%f", &t);
+                    vo=v-(a*t);
+                    printf("A velocidade inicial é: %.2f", vo);
+                }
+                else if(p==3){
+                    float v,vo,a,t;
+                    printf("\nDigite a velocidade inicial: ");
+                    scanf("%f", &vo);
+                    printf("\nDigite a velocidade final: ");
+                    scanf("%f", &v);
+                    printf("\nDigite o tempo: ");
+                    scanf("%f", &t);
+                    a=(v-vo)/t;
+                    printf("A aceleração é: %.2f", a);
+                }
+                else if(p==4){
+                    float v,vo,a,t;
+                    printf("\nDigite a velocidade inicial: ");
+                    scanf("%f", &vo);
+                    printf("\nDigite a velocidade final: ");
+                    scanf("%f", &v);
+                    printf("\nDigite a aceleração: ");
+                    scanf("%f", &a);
+                    t=(v-vo)/a;
+                    printf("A variação de tempo é: %.2f", t);
+                }
+                else {
+                    printf("ERROR");
+                }  
             }
             else{
                 printf("ERROR");
