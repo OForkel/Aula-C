@@ -212,9 +212,9 @@ else{
     }
     else if (num==2){
         int numer;
-        printf("1. Movimento uniforme\n");
+        printf("1. Movimento Uniforme\n");
         printf("2. Movimento Uniformemente Variado\n");
-        printf("3.\n");
+        printf("3. Força centrípeta\n");
         printf("4.\n");
         printf("5.\n");
         printf("6.\n");
@@ -483,7 +483,60 @@ else{
             }
             }
         else if(numer==3){
-            
+            int n;
+            printf("Escolha: \n");
+            printf("1. Força centrípeta\n");
+            printf("2. Velocidade\n");
+            printf("3. Raio\n");
+            printf("4. Massa\n");
+            scanf("%d", &n);
+            if(n==1){
+                float m,v,f,r;
+                printf("Digite a massa: ");
+                scanf("%f", &m);
+                printf("Digite a velocidade: ");
+                scanf("%f", &v);
+                printf("Digite o raio: ");
+                scanf("%f", &r);
+                f=(pow(v,2)/r)*m;
+                printf("A Força centrípeta é: %.2f", f);
+            }
+            else if(n==2){
+                float m,v,f,r;
+                printf("Digite a massa: ");
+                scanf("%f", &m);
+                printf("Digite o raio: ");
+                scanf("%f", &r);
+                printf("Digite a força centrípeta: ");
+                scanf("%f", &f);
+                v=sqrt(f*r/m);
+                printf("A velocidade é: %.2f", v);
+            }
+            else if (n==3){
+                float m,v,f,r;
+                printf("Digite a massa: ");
+                scanf("%f", &m);
+                printf("Digite a velocidade: ");
+                scanf("%f", &v);
+                printf("Digite a força centrípeta: ");
+                scanf("%f", &f);
+                r=pow(v,2)*m/r;
+                printf("O raio é: %.2f", r);
+            }
+            else if (n==4){
+                float m,v,f,r;
+                printf("Digite a velocidade: ");
+                scanf("%f", &v);
+                printf("Digite o raio: ");
+                scanf("%f", &r);
+                printf("Digite a força centrípeta: ");
+                scanf("%f", &f);
+                m=(r*f)/pow(v,2);
+                printf("A massa é: %.2f", m);
+            }
+            else{
+                printf("ERROR!");
+            }
         }
         else if(numer==4){
             
